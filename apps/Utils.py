@@ -2,7 +2,7 @@ import os
 
 from storages.backends.ftp import FTPStorage
 
-from apps.authentication.models import CustomUser as User
+from apps.base.models import CustomUser as User
 from core import settings
 
 

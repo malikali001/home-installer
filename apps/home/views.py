@@ -9,7 +9,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from django.urls import reverse
 
-from apps.authentication.models import CustomUser
+from apps.base.models import CustomUser
 
 
 @login_required(login_url="/login/")

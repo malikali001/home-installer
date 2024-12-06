@@ -56,7 +56,8 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.github',
     'allauth.socialaccount.providers.twitter',
     "sslserver",
-    'apps.accounts'
+    'apps.accounts',
+    'apps.base'
 ]
 
 MIDDLEWARE = [
@@ -161,7 +162,7 @@ STATICFILES_DIRS = (
 )
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-AUTH_USER_MODEL = "authentication.CustomUser"
+AUTH_USER_MODEL = "base.CustomUser"
 #############################################################
 
 if os.getenv("FTP_UPLOAD", default=False):
@@ -193,7 +194,7 @@ AUTHENTICATION_BACKENDS = (
     "allauth.account.auth_backends.AuthenticationBackend",
 )
 
-SITE_ID = 7
+SITE_ID = 9
 
 SERVER = env('SERVER', default='127.0.0.1')
 
