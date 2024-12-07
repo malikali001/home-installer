@@ -31,7 +31,7 @@ def upload_avatar(request):
     if image:
 
         try:
-            avatar_url = Utils.upload(request.user.username, image)
+            avatar_url = Utils.upload(request.user.email, image)
             request.user.image = os.getenv("upload_url", '') + '/'.join(avatar_url.split("/")[-2:])
             request.user.save()
         except Exception as e:

@@ -3,12 +3,12 @@ from django.contrib.auth.backends import ModelBackend
 
 
 class CustomBackend(ModelBackend):
-    def authenticate(self, request, username=None, password=None, **kwargs):
+    def authenticate(self, request, email=None, password=None, **kwargs):
         UserModel = get_user_model()
         try:
-            user = UserModel.objects.filter(username=username).first()
+            user = UserModel.objects.filter(email=email).first()
             if user is None:
-                user = UserModel.objects.get(email=username)
+                user = UserModel.objects.get(email=email)
         except UserModel.DoesNotExist:
             return None
         else:

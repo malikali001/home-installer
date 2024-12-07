@@ -1,17 +1,12 @@
-# -*- encoding: utf-8 -*-
-"""
-Copyright (c) 2019 - present AppSeed.us
-"""
-
-# Create your views here.
-from django.contrib.auth.forms import SetPasswordForm
-from django.http import JsonResponse, HttpResponseRedirect
-from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout, update_session_auth_hash
+from django.contrib.auth.forms import SetPasswordForm
+from django.http import HttpResponseRedirect, JsonResponse
+from django.shortcuts import redirect, render
 
-from core.settings import GITHUB_AUTH, TWITTER_AUTH
-from .forms import LoginForm, SignUpForm
 from apps import Utils
+from core.settings import GITHUB_AUTH, TWITTER_AUTH
+
+from .forms import LoginForm, SignUpForm
 
 
 def login_view(request):
@@ -22,19 +17,27 @@ def login_view(request):
     if request.method == "POST":
 
         if form.is_valid():
-            username = form.cleaned_data.get("username")
+            email = form.cleaned_data.get("email")
             password = form.cleaned_data.get("password")
-            user = authenticate(username=username, password=password)
+            user = authenticate(email=email, password=password)
             if user is not None:
                 login(request, user)
                 return redirect("/")
             else:
-                msg = 'Invalid credentials'
+                msg = "Invalid credentials"
         else:
-            msg = 'Error validating the form'
+            msg = "Error validating the form"
 
-    return render(request, "accounts/login.html", {"form": form, "msg": msg,
-                                                   "github_login": GITHUB_AUTH, "twitter_login": TWITTER_AUTH})
+    return render(
+        request,
+        "accounts/login.html",
+        {
+            "form": form,
+            "msg": msg,
+            "github_login": GITHUB_AUTH,
+            "twitter_login": TWITTER_AUTH,
+        },
+    )
 
 
 def register_user(request):
@@ -45,31 +48,33 @@ def register_user(request):
         form = SignUpForm(request.POST)
         if form.is_valid():
             form.save()
-            username = form.cleaned_data.get("username")
+            email = form.cleaned_data.get("email")
             raw_password = form.cleaned_data.get("password1")
-            user = authenticate(username=username, password=raw_password)
+            user = authenticate(email=email, password=raw_password)
 
-            msg = 'User created successfully.'
+            msg = "User created successfully."
             success = True
 
             # return redirect("/login/")
 
         else:
-            msg = 'Form is not valid'
+            msg = "Form is not valid"
     else:
         form = SignUpForm()
 
-    return render(request, "accounts/register.html", {"form": form, "msg": msg, "success": success})
+    return render(
+        request,
+        "accounts/register.html",
+        {"form": form, "msg": msg, "success": success},
+    )
 
 
 def delete_account(request, **kwargs):
-    result, message = Utils.delete_user(request.user.username)
+    result, message = Utils.delete_user(request.user.email)
     if not result:
-        return JsonResponse({
-            'errors': message
-        }, status=400)
+        return JsonResponse({"errors": message}, status=400)
     logout(request)
-    return HttpResponseRedirect('/')
+    return HttpResponseRedirect("/")
 
 
 def change_password(request, **kwargs):
@@ -77,11 +82,9 @@ def change_password(request, **kwargs):
     if form.is_valid():
         user = form.save()
         update_session_auth_hash(request, user)
-        message = 'Password successfully changed.'
+        message = "Password successfully changed."
         status = 200
     else:
         message = form.errors
         status = 400
-    return JsonResponse({
-        'message': message
-    }, status=status)
+    return JsonResponse({"message": message}, status=status)

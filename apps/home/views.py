@@ -12,19 +12,18 @@ from django.urls import reverse
 from apps.base.models import CustomUser
 
 
-@login_required(login_url="/login/")
 def index(request):
 
-    if not request.user.image:
-        current_user = CustomUser.objects.get(username=request.user.username)
-        social_acc = current_user.socialaccount_set.first()
-        if social_acc:
-            current_user.image = social_acc.get_avatar_url()
-            current_user.save()
+    # if not request.user.image:
+    #     current_user = CustomUser.objects.get(email=request.user.email)
+    #     social_acc = current_user.socialaccount_set.first()
+    #     if social_acc:
+    #         current_user.image = social_acc.get_avatar_url()
+    #         current_user.save()
 
-    context = {'segment': 'index'}
+    context = {"segment": "index"}
 
-    html_template = loader.get_template('home/index.html')
+    html_template = loader.get_template("home/index.html")
     return HttpResponse(html_template.render(context, request))
 
 
@@ -35,20 +34,36 @@ def pages(request):
     # Pick out the html file name from the url. And load that template.
     try:
 
-        load_template = request.path.split('/')[-1]
+        load_template = request.path.split("/")[-1]
 
-        if load_template == 'admin':
-            return HttpResponseRedirect(reverse('admin:index'))
-        context['segment'] = load_template
+        if load_template == "admin":
+            return HttpResponseRedirect(reverse("admin:index"))
+        context["segment"] = load_template
 
-        html_template = loader.get_template('home/' + load_template)
+        html_template = loader.get_template("home/" + load_template)
         return HttpResponse(html_template.render(context, request))
 
     except template.TemplateDoesNotExist:
 
-        html_template = loader.get_template('home/page-404.html')
+        html_template = loader.get_template("home/page-404.html")
         return HttpResponse(html_template.render(context, request))
 
     except:
-        html_template = loader.get_template('home/page-500.html')
+        html_template = loader.get_template("home/page-500.html")
         return HttpResponse(html_template.render(context, request))
+
+
+def process(request):
+
+    context = {"segment": "index"}
+
+    html_template = loader.get_template("home/page-about.html")
+    return HttpResponse(html_template.render(context, request))
+
+
+def product(request):
+
+    context = {"segment": "index"}
+
+    html_template = loader.get_template("home/page-blog-post.html")
+    return HttpResponse(html_template.render(context, request))

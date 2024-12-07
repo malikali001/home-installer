@@ -6,12 +6,12 @@ from apps.base.models import CustomUser as User
 from core import settings
 
 
-def username_exists(username):
-    user_query = User.objects.filter(username=username)
-    if user_query.exists():
-        return user_query.first()
+# def username_exists(username):
+#     user_query = User.objects.filter(username=username)
+#     if user_query.exists():
+#         return user_query.first()
 
-    return False
+#     return False
 
 
 def email_exists(email):
@@ -23,8 +23,8 @@ def email_exists(email):
     return False
 
 
-def delete_user(to_delete_user_username):
-    user = User.objects.filter(username=to_delete_user_username)
+def delete_user(to_delete_user_email):
+    user = User.objects.filter(email=to_delete_user_email)
     if user.count() == 0:
         return False, 'User not found.'
     if user.last().is_superuser:
@@ -33,29 +33,29 @@ def delete_user(to_delete_user_username):
         user.delete()
     except Exception as e:
         return False, str(e)
-    return True, f'{to_delete_user_username} deleted successfully.'
+    return True, f'{to_delete_user_email} deleted successfully.'
 
 
-def upload(username, image):
-    file_obj = image
+# def upload(username, image):
+#     file_obj = image
 
-    # do your validation here e.g. file size/type check
+#     # do your validation here e.g. file size/type check
 
-    # organize a path for the file in bucket
-    file_directory_within_bucket = f'{username}'
+#     # organize a path for the file in bucket
+#     file_directory_within_bucket = f'{username}'
 
-    # synthesize a full file path; note that we included the filename
-    file_path_within_bucket = os.path.join(
-        file_directory_within_bucket,
-        file_obj.name
-    )
+#     # synthesize a full file path; note that we included the filename
+#     file_path_within_bucket = os.path.join(
+#         file_directory_within_bucket,
+#         file_obj.name
+#     )
 
-    media_storage = FTPStorage()
+#     media_storage = FTPStorage()
 
-    if not media_storage.exists(file_path_within_bucket):  # avoid overwriting existing file
-        media_storage.save(file_path_within_bucket, file_obj)
+#     if not media_storage.exists(file_path_within_bucket):  # avoid overwriting existing file
+#         media_storage.save(file_path_within_bucket, file_obj)
 
-    return media_storage.url(file_path_within_bucket)
+#     return media_storage.url(file_path_within_bucket)
 
 
 def cfg_val(aVarName):

@@ -7,7 +7,7 @@
                 <img src="{% if request.user.image %}{{ request.user.image }}{% else %}{% static 'assets/img/team/profile-picture-3.jpg' %}{% endif %}" class="card-img-top rounded-circle border-white" alt="Bonnie Green Portrait">
             </div>
             <span class="h5 my-0 my-lg-3 me-3 me-lg-0">
-                {{ request.user.username }}
+                {{ request.user.email }}
                 {% if request.user.socialaccount_set.first %}
                     ({% if request.user.socialaccount_set.first.provider == 'github' %}
                         gh

@@ -1,0 +1,97 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block title %} About {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block nav_style %} navbar-dark navbar-theme-secondary {% endblock nav_style %}
+
+{% block content %}
+
+    <!-- Hero -->
+    <section class="section-header bg-secondary text-white">
+        <div class="container">
+            <div class="row justify-content-between align-items-center">
+                <div class="col-12 col-md-7 col-lg-6 text-center text-md-left">
+                    <h1 class="display-2 mb-4">How we work </h1>
+                    <p class="lead mb-4 text-muted">Our dedication to detail, state-of-the-art technology, and sustainability guarantees a smooth transition to a cleaner, greener energy future.</p>
+                    <a href="/page-services.html" class="btn btn-tertiary me-3 animate-up-2">What we do <span class="ms-2"><span class="fas fa-arrow-right"></span></span></a>
+                </div>
+                <div class="col-12 col-md-5 d-none d-md-block text-center"><img src="{% static 'assets/img/illustrations/about-illustration.svg' %}" alt=""></div>
+            </div>
+        </div>
+    </section>
+    <!-- End of Hero section -->
+    <!-- Section -->
+    <section class="section section-md">
+        <div class="container">
+            <div class="row align-items-center justify-content-around">
+                <div class="col-md-6 col-xl-6 mb-5">
+                    <img class="organic-radius img-fluid" src="{% static 'assets/img/sections/about-us-1.jpg' %}" alt="Office Desk">
+                </div>
+                <div class="col-md-6 col-xl-5 text-center text-md-left">
+                    <h2 class="h1 mb-5">All challenges accepted.</h2>
+                    <p class="lead">In the world of renewable energy, every project is unique, and every challenge is an opportunity. At Home installer, we thrive on solving complexities, whether it's designing custom solar solutions for diverse terrains, optimizing energy output in varied climates, or navigating regulatory landscapes.</p>
+                    <p class="lead">From residential installations to large-scale commercial projects, we approach every task with innovation, precision, and a commitment to excellence. No matter the scale or the difficulty, our team of experts is ready to deliver sustainable, efficient, and cost-effective solar solutions tailored to your needs.</p>
+                    <img src="{% static 'assets/img/signature.svg' %}" alt="signature" class="mt-4" width="150">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End of section -->
+    <!-- Section -->
+    <section class="section section-lg bg-gray-200">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col">
+                    <h2 class="h1 fw-light"><span class="fw-bold">Our</span> Process</h2>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-6">
+                <div class="row justify-content-center">
+                    <div class="col-md-12 col-lg-8">
+                        <div class="timeline timeline-one dark px-3 px-sm-0">
+                            <!-- Timeline Item 1 -->
+                            <div class="timeline-item">
+                                <h3 class="h4 mb-4">Step 1</h3>
+                                <img class="mt-2" src="{% static 'assets/img/office.png' %}" alt="Themesberg workspace" width="300">
+                                <p>Firstly, we’ll need to take a look at your property and assess your available roof or garden space. This will determine how many panels we’ll recommend installing; and this will reveal your potential solar ‘yield’. We do things slightly differently to many other organisations, and go that extra mile to produce a precision 3D model using a combination of imagery and Computer Aided Design (CAD).</p>
+                            </div>
+                            <!-- Timeline Item 1 -->
+                            <div class="timeline-item">
+                                <h3 class="h4 mb-4">Step 2</h3>
+                                <img class="mt-2" src="{% static 'assets/img/office.png' %}" alt="Themesberg workspace" width="300">
+                                <p>Next, we gain as much info as we can about your energy consumption profile, so we can provide an accurate estimate of how effective your solar system will be in reducing your bills and how quickly you’ll pay back your investment. We use a complex software suite, which incorporates 20 year’s of climate data, along with the array orientation, inclination and any other factor which could affect the yield of the array (e.g. shading).</p>
+                            </div>
+                            <!-- Timeline Item 1 -->
+                            <div class="timeline-item">
+                                <h3 class="h4 mb-4">Step 3</h3>
+                                <img class="mt-2" src="{% static 'assets/img/office.png' %}" alt="Themesberg workspace" width="300">
+                                <p>In this next phase of design we select the major components to form your system architecture from a database of thousands of products. This ensures we match the most appropriate system to meet your consumption profile, with the aim of maximising your payback period. We’ll then generate a detailed report and share our findings with you.</p>
+                            </div>
+                            <!-- Timeline Item 1 -->
+                            <div class="timeline-item">
+                                <h3 class="h4 mb-4">Step 4</h3>
+                                <img class="mt-2" src="{% static 'assets/img/office.png' %}" alt="Themesberg workspace" width="300">
+                                <p>Provided you are content with our proposal, we’ll organise an installation window and arrange any scaffolding (if required) and order your equipment to be delivered to the site address. On day one we will ‘walk the fit’ with you to ensure you are happy with where your equipment will be sited.</p>
+                            </div>
+                            <!-- Timeline Item 1 -->
+                            <div class="timeline-item">
+                                <h3 class="h4 mb-4">Step 5</h3>
+                                <img class="mt-2" src="{% static 'assets/img/office.png' %}" alt="Themesberg workspace" width="300">
+                                <p>Next, we’ll carry out the installation, testing and commissioning of your system and talk you through the online monitoring platform, so you can monitor all the amazing solar gains you’ll be making. Finally, we’ll issue you your installation pack, any certificates, then away you go!</p>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}
