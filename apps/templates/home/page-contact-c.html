@@ -1,0 +1,304 @@
+{% extends "layouts/base.html" %} {% load static %} {% block title %} Enquiry
+Form {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %} {% block nav_style %}
+navbar-dark navbar-theme-secondary {% endblock nav_style %} {% block content %}
+
+<!-- Hero -->
+<section class="section section-header pb-11 bg-primary text-white">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-xl-8 text-center">
+        <h1 class="display-2 mb-3">Get in touch</h1>
+        <p class="lead">
+          We want to help you revolutionise your energy with solar. We offer
+          full scope systems with battery and hot water storage options.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Section -->
+<div class="section py-0">
+  <div class="container mt-n10">
+    <div class="row">
+      <div class="col-12">
+        <iframe
+          class="map rounded"
+          id="gmap_canvas"
+          src="https://maps.google.com/maps?q=london%20kingdom&t=&z=6&ie=UTF8&iwloc=&output=embed"
+        ></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Enquiry Form Section -->
+<section class="section section-lg pt-6">
+  <div class="container">
+    <div class="row justify-content-center mb-5 mb-lg-6">
+      <div class="col-12 col-lg-8">
+        <!-- Enquiry Form Card -->
+        <div class="card border-0 p-2 p-md-3 p-lg-5">
+          <div class="card-header bg-white border-0 text-center">
+            <h2>Enquiry Form</h2>
+            <p>
+              If you would like to receive a personalised quote for any or our
+              services, or just have general queries about Solar energy systems
+              please complete the form below. We aim to get back to you within
+              24 hours.
+            </p>
+          </div>
+          <div class="card-body px-0 pt-0">
+            <form action="" method="POST">
+              {% csrf_token %}
+              <!-- Name and Surname -->
+              <div class="mb-4">
+                <label for="name">Name</label>
+                <div class="input-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="e.g. John"
+                    id="name"
+                    name="name"
+                    required
+                  />
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="e.g. Doe"
+                    id="surname"
+                    name="surname"
+                    required
+                  />
+                </div>
+              </div>
+
+              <!-- Email and Phone -->
+              <div class="mb-4">
+                <label for="email">Email</label>
+                <div class="input-group">
+                  <input
+                    type="email"
+                    class="form-control"
+                    placeholder="example@company.com"
+                    id="email"
+                    name="email"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="mb-4">
+                <label for="phone">Phone</label>
+                <div class="input-group">
+                  <input
+                    type="tel"
+                    class="form-control"
+                    placeholder="Your phone number"
+                    id="phone"
+                    name="phone"
+                    required
+                  />
+                </div>
+              </div>
+
+              <!-- Postcode and Address Selection -->
+              <div class="mb-4">
+                <label for="postcode">Postcode</label>
+                <div class="input-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="e.g. AB12 3CD"
+                    id="postcode"
+                    name="postcode"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="mb-4">
+                <label for="address">Select Address</label>
+                <select class="form-control" id="address" name="address">
+                  <option>Address 1</option>
+                  <option>Address 2</option>
+                  <option>Address 3</option>
+                </select>
+              </div>
+
+              <!-- Password and Confirm Password -->
+              <div class="mb-4">
+                <label for="password">Password</label>
+                <div class="input-group">
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="password"
+                    name="password"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="mb-4">
+                <label for="confirm_password">Confirm Password</label>
+                <div class="input-group">
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="confirm_password"
+                    name="confirm_password"
+                    required
+                  />
+                </div>
+              </div>
+
+              <!-- Solar Related Questions -->
+              <div class="mb-4">
+                <h5>
+                  Looking for Solar? Fill out the below to better address your
+                  query
+                </h5>
+                <label for="electricity_consumption"
+                  >Estimated Annual Electricity Consumption
+                  (KWH/GBP/Others)</label
+                >
+                <div class="input-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="electricity_consumption"
+                    name="electricity_consumption"
+                    required
+                  />
+                </div>
+              </div>
+
+              <!-- Dropdowns and Options -->
+              <div class="mb-4">
+                <label for="building_height">Building Height (stories)</label>
+                <select
+                  class="form-control"
+                  id="building_height"
+                  name="building_height"
+                >
+                  <option value="1">1 Story</option>
+                  <option value="2">2 Stories</option>
+                  <option value="3">3 Stories</option>
+                  <option value="4">4 Stories</option>
+                  <option value="5">5 Stories</option>
+                </select>
+              </div>
+              <div class="mb-4">
+                <label for="available_surface"
+                  >Available Surface for PV Panels (m²)</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="available_surface"
+                  name="available_surface"
+                  required
+                />
+              </div>
+              <div class="mb-4">
+                <label for="orientation">Orientation</label>
+                <select
+                  class="form-control"
+                  id="orientation"
+                  name="orientation"
+                >
+                  <option>North</option>
+                  <option>North West</option>
+                  <option>West</option>
+                  <option>South West</option>
+                  <option>South</option>
+                  <option>South East</option>
+                </select>
+              </div>
+              <div class="mb-4">
+                <label for="tiles_type">Tiles Type</label>
+                <select class="form-control" id="tiles_type" name="tiles_type">
+                  <option value="A">A</option>
+                  <option value="B">B</option>
+                  <option value="C">C</option>
+                  <option value="D">D</option>
+                </select>
+              </div>
+              <div class="mb-4">
+                <label for="interested_in">Interested in</label>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="solar"
+                    name="interested_in"
+                    value="Solar"
+                  />
+                  <label class="form-check-label" for="solar">Solar</label>
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="battery"
+                    name="interested_in"
+                    value="Battery"
+                  />
+                  <label class="form-check-label" for="battery">Battery</label>
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="ev_charging"
+                    name="interested_in"
+                    value="EV Charging"
+                  />
+                  <label class="form-check-label" for="ev_charging"
+                    >EV Charging</label
+                  >
+                </div>
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="other"
+                    name="interested_in"
+                    value="Other"
+                  />
+                  <label class="form-check-label" for="other">Other</label>
+                </div>
+              </div>
+
+              <!-- message -->
+              <div class="mb-4">
+                <label for="message">Message</label>
+                <textarea
+                  class="form-control"
+                  id="message"
+                  name="message"
+                  rows="5"
+                ></textarea>
+              </div>
+
+              <!-- Submit Button -->
+              <div class="d-grid">
+                <button type="submit" class="btn rounded btn-secondary">
+                  Submit Enquiry
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <!-- End of Enquiry Form Card -->
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End of Enquiry Form Section -->
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

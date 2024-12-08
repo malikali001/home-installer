@@ -8,7 +8,6 @@ class Query(models.Model):
     message = models.TextField()
     address = models.TextField(blank=False)
     tiles_type = models.CharField(max_length=25)
-    interested_in = models.CharField(max_length=25)
     timestamp = models.DateTimeField(default=timezone.now())
     electricity_consumption = models.CharField(max_length=25)
     building_height = models.CharField(max_length=25)

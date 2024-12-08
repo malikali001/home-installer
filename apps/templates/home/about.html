@@ -1,0 +1,107 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block title %} About Us {% endblock %} 
+
+<!-- Specific Page CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block nav_style %} navbar-dark navbar-theme-secondary {% endblock nav_style %}
+
+{% block content %}
+<!-- Hero -->
+<section class="section-header bg-secondary text-white">
+    <div class="container">
+        <div class="row justify-content-between align-items-center">
+            <div class="col-12 col-md-7 col-lg-6 text-center text-md-left">
+                <h1 class="display-2 mb-4">About Our Solar Journey</h1>
+                <p class="lead mb-4 text-muted">Driven by passion for renewable energy and innovation, we empower homes and businesses with clean, sustainable solar solutions. Join us in building a greener future.</p>
+            </div>
+            <div class="col-12 col-md-5 d-none d-md-block text-center">
+                <img src="{% static 'assets/img/illustrations/about-illustration.svg' %}" alt="About Us">
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End of Hero -->
+
+<!-- Section -->
+<section class="section section-md bg-white">
+    <div class="container">
+        <div class="row align-items-center justify-content-around">
+            <div class="col-md-6 col-xl-6 mb-5">
+                <img class="organic-radius img-fluid" src="{% static 'assets/img/sections/about-us-1.jpg' %}" alt="Team at work">
+            </div>
+            <div class="col-md-6 col-xl-5 text-center text-md-left">
+                <h2 class="h1 mb-5">Who We Are</h2>
+                <p class="lead">We are a team of dedicated solar energy experts committed to making clean energy accessible and affordable for everyone. With years of experience and a customer-first approach, we transform how energy powers homes and businesses.</p>
+                <p class="lead">From initial consultation to final installation, we guide our clients every step of the way, ensuring tailored solar solutions that fit their unique needs.</p>
+                <img src="{% static 'assets/img/signature.svg' %}" alt="signature" class="mt-4" width="150">
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End of Section -->
+
+<!-- Section -->
+<section class="section section-lg bg-gray-200">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col">
+                <h2 class="h1 fw-light"><span class="fw-bold">Why</span> Choose Us</h2>
+            </div>
+        </div>
+        <div class="row justify-content-center mt-6">
+            <div class="col-md-4 text-center">
+                <img class="mb-3" src="{% static 'assets/img/sections/about-us-1.jpg' %}" alt="Expertise" width="100">
+                <h4>Expertise</h4>
+                <p>Backed by a team of certified professionals, we deliver top-notch solar solutions tailored to your needs.</p>
+            </div>
+            <div class="col-md-4 text-center">
+                <img class="mb-3" src="{% static 'assets/img/sections/about-us-1.jpg' %}" alt="Sustainability" width="100">
+                <h4>Sustainability</h4>
+                <p>Our mission is to contribute to a greener planet by reducing dependency on non-renewable energy sources.</p>
+            </div>
+            <div class="col-md-4 text-center">
+                <img class="mb-3" src="{% static 'assets/img/sections/about-us-1.jpg' %}" alt="Support" width="100">
+                <h4>Unmatched Support</h4>
+                <p>We provide end-to-end support, from consultation and design to installation and maintenance.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End of Section -->
+
+<!-- Timeline Section -->
+<section class="section section-md">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col">
+                <h2 class="h1 fw-light"><span class="fw-bold">Our</span> Journey</h2>
+            </div>
+        </div>
+        <div class="row justify-content-center mt-6">
+            <div class="col-md-12 col-lg-8">
+                <div class="timeline timeline-one dark px-3 px-sm-0">
+                    <div class="timeline-item">
+                        <h3 class="h4 mb-4">Step 1</h3>
+                        <p>Founded with a vision to make solar energy accessible to all, we started by delivering small-scale residential projects.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3 class="h4 mb-4">Step 2</h3>
+                        <p>As demand grew, we expanded our capabilities to include commercial and industrial installations.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3 class="h4 mb-4">Step 3</h3>
+                        <p>We invested in cutting-edge technology and training, becoming a trusted leader in renewable energy solutions.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3 class="h4 mb-4">Step 4</h3>
+                        <p>Today, we proudly serve hundreds of satisfied clients, helping them save money and protect the environment.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}

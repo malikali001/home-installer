@@ -1,0 +1,239 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block title %} Home {% endblock %} 
+
+{% block nav_style %} navbar-dark navbar-theme-secondary {% endblock nav_style %}
+
+{% block content %}
+
+<!-- Hero Section -->
+<section class="section-header bg-secondary text-white">
+    <div class="container">
+        <div class="row justify-content-between align-items-center">
+            <div class="col-12 col-md-7 col-lg-6 text-center text-md-left">
+                <h1 class="display-2 mb-4">Save Money and Upgrade Your Home with Solar</h1>
+                <p class="lead mb-4">Harness the power of the sun with our cutting-edge solar solutions. From premium equipment to expert installation, we handle it all so you can focus on enjoying long-term savings and sustainable energy.</p>
+                <a href="#learn-more" class="btn btn-tertiary me-3 animate-up-2">Learn More <span class="ms-2"><span class="fas fa-arrow-right"></span></span></a>
+                <a href="#contact-us" class="btn btn-outline-light animate-up-2">Get a Quote</a>
+            </div>
+            <div class="col-12 col-md-5 d-none d-md-block text-center">
+                <img src="{% static 'assets/img/illustrations/home-solar.svg' %}" alt="Solar Energy" class="img-fluid">
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End of Hero Section -->
+
+<!-- Features Section -->
+<section class="section section-md bg-white">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col">
+                <h2 class="h1 fw-light mb-5">Why Choose Us?</h2>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-4 mb-5">
+                <div class="icon-box text-center">
+                    <div class="icon icon-shape bg-secondary text-white rounded-circle mb-4">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h5>Top-Quality Equipment and Service</h5>
+                    <p>We use industry-leading solar panels, inverters, and batteries to ensure maximum energy output and durability.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-5">
+                <div class="icon-box text-center">
+                    <div class="icon icon-shape bg-secondary text-white rounded-circle mb-4">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h5>In-House Qualified Installers</h5>
+                    <p>Our expert team of certified installers ensures precision, safety, and efficiency in every project.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-5">
+                <div class="icon-box text-center">
+                    <div class="icon icon-shape bg-secondary text-white rounded-circle mb-4">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <h5>End-to-End Process Ownership</h5>
+                    <p>From consultation to installation and maintenance, we take full ownership to deliver a seamless experience.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-5">
+                <div class="icon-box text-center">
+                    <div class="icon icon-shape bg-secondary text-white rounded-circle mb-4">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h5>Energy Savings Analytics Tool</h5>
+                    <p>Track your energy savings and system performance with our state-of-the-art analytics tool.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End of Features Section -->
+
+<!-- Section for Solar Benefits -->
+<section class="section bg-light pt-5 pb-5">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col">
+                <h2 class="h1 fw-bold">Why Choose Solar with Us?</h2>
+                <p class="lead text-muted mb-5">Take control of your energy future and enjoy the benefits of solar power with our premium solutions. Here's how we ensure you get the best value:</p>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Top-Quality Equipment and Service</h5>
+                        <p class="card-text">We provide only the best solar equipment and services, ensuring optimal performance and reliability for years to come.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">In-House Qualified Installers</h5>
+                        <p class="card-text">Our skilled team of in-house installers are certified to deliver top-tier solar solutions, ensuring every installation is perfect.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">End-to-End Process Ownership</h5>
+                        <p class="card-text">We handle everything from consultation and design to installation and maintenance—providing you with a seamless solar experience.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Key Insights with Energy Savings Analytics Tool</h5>
+                        <p class="card-text">Track your energy savings and make informed decisions with our intuitive energy savings analytics tool—designed to help you save even more.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Section -->
+<div class="section py-0">
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-12">
+                <iframe class="map rounded" id="gmap_canvas" src="https://maps.google.com/maps?q=london%20kingdom&t=&z=6&ie=UTF8&iwloc=&output=embed"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Steps Section -->
+<section id="learn-more" class="section section-md bg-white">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col">
+                <h2 class="h1 fw-light mb-5">Our Process</h2>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-4 mb-5">
+                <div class="icon-box text-center">
+                    <div class="icon icon-shape bg-secondary text-white rounded-circle mb-4">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h5>Step 1: Home Assessment</h5>
+                    <p>We assess your property and energy consumption profile to design the ideal solar solution for you.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-5">
+                <div class="icon-box text-center">
+                    <div class="icon icon-shape bg-secondary text-white rounded-circle mb-4">
+                        <i class="fas fa-solar-panel"></i>
+                    </div>
+                    <h5>Step 2: Custom Design</h5>
+                    <p>Using advanced tools, we create a detailed 3D design and system proposal tailored to your needs.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-5">
+                <div class="icon-box text-center">
+                    <div class="icon icon-shape bg-secondary text-white rounded-circle mb-4">
+                        <i class="fas fa-wrench"></i>
+                    </div>
+                    <h5>Step 3: Expert Installation</h5>
+                    <p>Our certified team installs your system with precision, ensuring seamless integration and performance.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-5">
+                <div class="icon-box text-center">
+                    <div class="icon icon-shape bg-secondary text-white rounded-circle mb-4">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h5>Step 4: Monitoring & Support</h5>
+                    <p>We provide tools for monitoring your energy savings and offer ongoing support for peace of mind.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End of Steps Section -->
+
+<!-- Contact Section -->
+<section id="contact-us" class="section section-lg bg-secondary text-white">
+    <div class="container text-center">
+        <h2 class="h1 mb-5">Ready to Save with Solar?</h2>
+        <p class="lead mb-4">Contact us today to get a free consultation and start your journey towards sustainable energy.</p>
+        <a href="/contact-us" class="btn btn-light me-3">Contact Us</a>
+        <a href="/request-quote" class="btn btn-outline-light">Request a Quote</a>
+    </div>
+</section>
+<!-- End of Contact Section -->
+
+<!-- Accreditations Section -->
+<section class="section section-md bg-gray-200">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col">
+                <h2 class="h1 fw-light mb-5">Our Accreditations</h2>
+                <p class="lead">We’re proud to be accredited by leading certification bodies, ensuring top-quality standards in every project.</p>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="icon-box text-center">
+                    <div class="icon icon-shape bg-secondary text-white rounded-circle mb-4">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h5><a href="https://www.nabcep.org/" target="_blank" class="text-secondary">NABCEP Certification</a></h5>
+                    <p>North American Board of Certified Energy Practitioners ensures excellence in renewable energy systems.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="icon-box text-center">
+                    <div class="icon icon-shape bg-secondary text-white rounded-circle mb-4">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h5><a href="https://www.iso.org/" target="_blank" class="text-secondary">ISO 9001 Certification</a></h5>
+                    <p>International standards for quality management systems and operational excellence.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="icon-box text-center">
+                    <div class="icon icon-shape bg-secondary text-white rounded-circle mb-4">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h5><a href="https://www.energystar.gov/" target="_blank" class="text-secondary">Energy Star Certification</a></h5>
+                    <p>A U.S. EPA program that promotes energy efficiency and environmental responsibility.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End of Accreditations Section -->
+
+{% endblock content %}

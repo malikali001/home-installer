@@ -30,7 +30,7 @@ def login_view(request):
 
     return render(
         request,
-        "accounts/login.html",
+        "accounts/login-c.html",
         {
             "form": form,
             "msg": msg,
@@ -64,7 +64,7 @@ def register_user(request):
 
     return render(
         request,
-        "accounts/register.html",
+        "accounts/register-c.html",
         {"form": form, "msg": msg, "success": success},
     )
 
