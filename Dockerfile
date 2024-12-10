@@ -1,21 +1,15 @@
-FROM python:3.9
+FROM python:3.12-alpine
 
-# set environment variables
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV PYTHONUNBUFFERED 1
+WORKDIR /app
 
 COPY requirements.txt .
 
-# install python dependencies
-RUN pip install --upgrade pip
 RUN pip install --no-cache-dir -r requirements.txt
-
-COPY env.sample .env
 
 COPY . .
 
-RUN python manage.py makemigrations 
-RUN python manage.py migrate
-
-# gunicorn
-CMD ["gunicorn", "--config", "gunicorn-cfg.py", "core.wsgi"]
+# Apply migrations, create a superuser, and run the server
+CMD ["sh", "-c", "python manage.py makemigrations && \
+    python manage.py migrate && \
+    python manage.py create_admin && \
+    python manage.py runserver 0.0.0.0:8000"]
